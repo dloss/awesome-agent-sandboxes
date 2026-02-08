@@ -1,12 +1,14 @@
 # Awesome Agent Sandboxes
 
-A curated list of sandboxing solutions for AI agents, organized by isolation mechanism.
+A curated list of sandboxing solutions for AI agents, organized by isolation layer.
+
+If you already have infrastructure primitives, focus on **Base Technologies** within the layer you need. If you want a turnkey or near-turnkey experience, start with **Agent Sandboxes** in that same layer.
 
 ---
 
-## MicroVMs
+## Hardware / Hypervisor Isolation
 
-Lightweight virtual machines providing hardware-level isolation with fast startup times.
+Full or lightweight VMs provide the strongest isolation boundary and are the most common choice for running untrusted agent code at scale.
 
 ### Base Technologies
 
@@ -25,12 +27,21 @@ Lightweight virtual machines providing hardware-level isolation with fast startu
 - [Gondolin](https://github.com/earendil-works/gondolin) - QEMU-based microVMs booting in under a second with programmatic network and filesystem control
 - [Netclode](https://github.com/angristan/netclode) - Self-hosted cloud coding agent using Kata Containers with Cloud Hypervisor microVMs
 - [Runloop](https://runloop.ai) - Enterprise AI infrastructure with dual-layer isolation (VM + container) for secure agent execution
+- [Vibe](https://github.com/lynaghk/vibe) - Zero-configuration Debian Linux VMs on macOS using native Virtualization.framework for LLM agents
+- [exe.dev](https://exe.dev) - Persistent SSH-accessible VMs with sudo access for development workflows
+- [Daytona](https://daytona.io) - Secure infrastructure for running AI-generated code in cloud environments
+- [Modal](https://modal.com) - Serverless platform with ephemeral environments for running untrusted code at scale
 
 ---
 
-## Containers
+## Kernel Isolation
 
-OS-level virtualization using Linux namespaces and cgroups.
+OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; it is fast and flexible but shares the host kernel.
+
+### Base Technologies
+
+- [gVisor](https://github.com/google/gvisor) - Memory-safe Go application kernel sandboxing containers by reimplementing Linux syscalls
+- [LiteBox](https://github.com/microsoft/litebox) - Modular library OS sandboxing applications via minimal syscall interface across platforms
 
 ### Agent Sandboxes
 
@@ -44,37 +55,11 @@ OS-level virtualization using Linux namespaces and cgroups.
 
 ---
 
-## Local VMs
+## Process Isolation
 
-Full virtual machines running on local hardware.
+Jails and namespace-based tools restrict syscalls, filesystem, and network access for individual processes with minimal overhead.
 
-- [Vibe](https://github.com/lynaghk/vibe) - Zero-configuration Debian Linux VMs on macOS using native Virtualization.framework for LLM agents
-- [exe.dev](https://exe.dev) - Persistent SSH-accessible VMs with sudo access for development workflows
-
----
-
-## Remote VMs / Cloud Sandboxes
-
-Cloud-hosted virtual machine environments.
-
-- [Daytona](https://daytona.io) - Secure infrastructure for running AI-generated code in cloud environments
-- [Modal](https://modal.com) - Serverless platform with ephemeral environments for running untrusted code at scale
-- [sandbox-agent](https://github.com/rivet-dev/sandbox-agent) - Universal HTTP/SSE agent controller designed to run inside E2B, Daytona, Vercel, or Docker sandboxes
-
----
-
-## User-space Kernels
-
-Application kernels that intercept and handle syscalls in userspace.
-
-- [gVisor](https://github.com/google/gvisor) - Memory-safe Go application kernel sandboxing containers by reimplementing Linux syscalls
-- [LiteBox](https://github.com/microsoft/litebox) - Modular library OS sandboxing applications via minimal syscall interface across platforms
-
----
-
-## Process Jails
-
-Lightweight isolation using Linux kernel security features.
+### Base Technologies
 
 - [Bubblewrap](https://github.com/containers/bubblewrap) - Unprivileged sandboxing using Linux namespaces and seccomp, used by Flatpak
 - [runjail](https://github.com/debfx/runjail) - CLI for isolating processes with granular filesystem and network permission control
@@ -82,20 +67,22 @@ Lightweight isolation using Linux kernel security features.
 
 ---
 
-## Filesystem Virtualization
+## Filesystem Isolation
 
-Copy-on-write and virtual filesystem approaches.
+Copy-on-write and virtual filesystem layers isolate agent changes from the host or workspace while keeping performance high.
+
+### Base Technologies
 
 - [AgentFS](https://docs.turso.tech/agentfs/guides/sandbox) - Copy-on-write sandboxing isolating file changes from original source tree
 - [LocalSandbox](https://github.com/coplane/localsandbox) - Python SDK with SQLite-backed virtual filesystem for bash and Python execution
 
 ---
 
-## WebAssembly (WASM)
+## Runtime / Language Isolation (WASM)
 
-Browser-grade isolation through WebAssembly sandboxing.
+WebAssembly provides strong sandboxing inside a language runtime and is useful when you need embedding or portable execution.
 
-### Runtimes
+### Base Technologies
 
 - [Wasmtime](https://wasmtime.dev) - Fast and secure WebAssembly runtime by Bytecode Alliance with WASI support
 - [Pyodide](https://pyodide.org) - CPython distribution compiled to WebAssembly for browser and Node.js execution
@@ -112,7 +99,9 @@ Browser-grade isolation through WebAssembly sandboxing.
 
 ## Embedded Interpreters
 
-In-process sandboxed code execution without OS-level isolation.
+In-process execution with strict capability controls but no OS boundary; best for lightweight tasks or trusted environments.
+
+### Base Technologies
 
 - [Monty](https://github.com/pydantic/monty) - Minimal Python interpreter in Rust with microsecond startup and strict capability controls
 
