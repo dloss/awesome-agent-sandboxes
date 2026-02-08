@@ -21,6 +21,7 @@ Full or lightweight VMs provide the strongest isolation boundary and are the mos
 - [E2B](https://e2b.dev) - Cloud sandbox platform powered by Firecracker microVMs for enterprise AI agents to safely execute code
 - [Sprites](https://sprites.dev) / [Fly.io Sprites](https://fly.io) - Ephemeral Linux VMs secured through Firecracker with checkpoint/restore capabilities
 - [Vercel Sandbox](https://github.com/vercel/sandbox) - Ephemeral compute service executing untrusted code in isolated Firecracker microVMs
+- [yolo-cage](https://github.com/borenstein/yolo-cage) - VM-based sandbox for AI coding agents that blocks secret exfiltration and prevents agents from merging their own PRs
 - [Matchlock](https://github.com/jingkaihe/matchlock) - CLI running AI agents in ephemeral microVMs (Firecracker on Linux, Virtualization.framework on macOS) with network allowlisting
 - [Arrakis](https://github.com/abshkbh/arrakis) - Self-hosted microVM platform for AI agent code execution with checkpoint-and-restore functionality
 - [ERA](https://github.com/BinSquare/ERA) - Local sandboxing using krunvm microVMs with container-like UX and optional Cloudflare Workers deployment
@@ -48,6 +49,7 @@ OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; 
 - [Leash](https://github.com/strongdm/leash) - Policy enforcement wrapper for AI coding agents with Cedar-based rules and real-time monitoring
 - [packnplay](https://github.com/obra/packnplay) - Docker wrapper for AI assistants with automatic git worktree and devcontainer support
 - [yolobox](https://github.com/finbarr/yolobox) - CLI running AI agents in containers where home directory stays unmounted for safety
+- [CodeRunner](https://github.com/instavm/coderunner) - Secure local sandbox to run LLM-generated code on macOS using Apple containers and MCP
 - [SandboxAI](https://github.com/substratusai/sandboxai) - Docker-containerized runtime for safely executing AI-generated Python and shell commands
 - [llm-sandbox](https://github.com/vndee/llm-sandbox) - Python library executing LLM-generated code in Docker/Kubernetes/Podman with customizable security
 - [MCP Runner](https://github.com/abir-taheer/mcp-runner) - MCP server platform using Docker with gVisor runtime for multi-tenant isolation
@@ -64,6 +66,10 @@ Jails and namespace-based tools restrict syscalls, filesystem, and network acces
 - [Bubblewrap](https://github.com/containers/bubblewrap) - Unprivileged sandboxing using Linux namespaces and seccomp, used by Flatpak
 - [runjail](https://github.com/debfx/runjail) - CLI for isolating processes with granular filesystem and network permission control
 - [sydbox](https://gitlab.exherbo.org/sydbox/sydbox) - Security-focused application kernel written in Rust for sandboxing and integrity
+
+### Agent Sandboxes
+
+- [Anthropic Sandbox Runtime](https://github.com/anthropic-experimental/sandbox-runtime) - Lightweight sandboxing tool enforcing filesystem and network restrictions on arbitrary processes without requiring a container
 
 ---
 
