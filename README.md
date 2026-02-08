@@ -2,7 +2,7 @@
 
 A curated list of sandboxing solutions for AI agents, organized by isolation layer.
 
-If you already have infrastructure primitives, focus on **Base Technologies** within the layer you need. If you want a turnkey or near-turnkey experience, start with **Agent Sandboxes** in that same layer.
+If you already have the platform plumbing (networking, IAM, logging, orchestration), then you only need an isolation engine. In that case, pick from **Base Technologies** for the layer you need. If you want a turnkey or near-turnkey stack that includes the engine plus operational tooling, start with **Agent Sandboxes** in that same layer.
 
 ---
 
