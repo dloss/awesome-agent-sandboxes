@@ -6,7 +6,7 @@ If you already have the platform plumbing (networking, IAM, logging, orchestrati
 
 ---
 
-## Hardware / Hypervisor Isolation
+## VMs & MicroVMs
 
 Full or lightweight VMs provide the strongest isolation boundary and are the most common choice for running untrusted agent code at scale.
 
@@ -34,7 +34,7 @@ Full or lightweight VMs provide the strongest isolation boundary and are the mos
 
 ---
 
-## Kernel Isolation
+## Containers
 
 OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; it is fast and flexible but shares the host kernel.
 
@@ -55,7 +55,7 @@ OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; 
 
 ---
 
-## Process Isolation
+## Process Sandboxes
 
 Jails and namespace-based tools restrict syscalls, filesystem, and network access for individual processes with minimal overhead.
 
@@ -67,7 +67,7 @@ Jails and namespace-based tools restrict syscalls, filesystem, and network acces
 
 ---
 
-## Filesystem Isolation
+## Filesystem Sandboxes
 
 Copy-on-write and virtual filesystem layers isolate agent changes from the host or workspace while keeping performance high.
 
@@ -78,7 +78,7 @@ Copy-on-write and virtual filesystem layers isolate agent changes from the host 
 
 ---
 
-## Runtime / Language Isolation (WASM)
+## WASM Runtimes
 
 WebAssembly provides strong sandboxing inside a language runtime and is useful when you need embedding or portable execution.
 
