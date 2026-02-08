@@ -2,21 +2,13 @@
 
 A curated list of sandboxing solutions for AI agents, organized by isolation layer.
 
-If you already have the platform plumbing (networking, IAM, logging, orchestration), then you only need an isolation engine. In that case, pick from **Base Technologies** for the layer you need. If you want a turnkey or near-turnkey stack that includes the engine plus operational tooling, start with **Agent Sandboxes** in that same layer.
+Where applicable, each section links to the base technologies (isolation engines, runtimes) that underpin the listed sandboxes, in case you already have the platform plumbing and only need the engine itself.
 
 ---
 
 ## VMs & MicroVMs
 
-Full or lightweight VMs provide the strongest isolation boundary and are the most common choice for running untrusted agent code at scale.
-
-### Base Technologies
-
-- [Firecracker](https://github.com/firecracker-microvm/firecracker) - Minimalist VMM combining hardware virtualization security with container-like speed for serverless workloads
-- [libkrun](https://github.com/containers/libkrun) - C library enabling applications to run isolated processes in lightweight VMs with minimal overhead
-- [Cloud Hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor) - Virtual Machine Monitor for modern cloud workloads running on KVM or Microsoft Hypervisor
-
-### Agent Sandboxes
+Full or lightweight VMs provide the strongest isolation boundary and are the most common choice for running untrusted agent code at scale. Built on technologies like [Firecracker](https://github.com/firecracker-microvm/firecracker), [libkrun](https://github.com/containers/libkrun), and [Cloud Hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor).
 
 - [E2B](https://e2b.dev) - Cloud sandbox platform powered by Firecracker microVMs for enterprise AI agents to safely execute code
 - [Sprites](https://sprites.dev) / [Fly.io Sprites](https://fly.io) - Ephemeral Linux VMs secured through Firecracker with checkpoint/restore capabilities
@@ -37,14 +29,7 @@ Full or lightweight VMs provide the strongest isolation boundary and are the mos
 
 ## Containers
 
-OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; it is fast and flexible but shares the host kernel.
-
-### Base Technologies
-
-- [gVisor](https://github.com/google/gvisor) - Memory-safe Go application kernel sandboxing containers by reimplementing Linux syscalls
-- [LiteBox](https://github.com/microsoft/litebox) - Modular library OS sandboxing applications via minimal syscall interface across platforms
-
-### Agent Sandboxes
+OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; it is fast and flexible but shares the host kernel. Built on technologies like [gVisor](https://github.com/google/gvisor) and [LiteBox](https://github.com/microsoft/litebox).
 
 - [Leash](https://github.com/strongdm/leash) - Policy enforcement wrapper for AI coding agents with Cedar-based rules and real-time monitoring
 - [packnplay](https://github.com/obra/packnplay) - Docker wrapper for AI assistants with automatic git worktree and devcontainer support
@@ -59,15 +44,7 @@ OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; 
 
 ## Process Sandboxes
 
-Jails and namespace-based tools restrict syscalls, filesystem, and network access for individual processes with minimal overhead.
-
-### Base Technologies
-
-- [Bubblewrap](https://github.com/containers/bubblewrap) - Unprivileged sandboxing using Linux namespaces and seccomp, used by Flatpak
-- [runjail](https://github.com/debfx/runjail) - CLI for isolating processes with granular filesystem and network permission control
-- [sydbox](https://gitlab.exherbo.org/sydbox/sydbox) - Security-focused application kernel written in Rust for sandboxing and integrity
-
-### Agent Sandboxes
+Jails and namespace-based tools restrict syscalls, filesystem, and network access for individual processes with minimal overhead. Built on technologies like [Bubblewrap](https://github.com/containers/bubblewrap), [runjail](https://github.com/debfx/runjail), and [sydbox](https://gitlab.exherbo.org/sydbox/sydbox).
 
 - [Anthropic Sandbox Runtime](https://github.com/anthropic-experimental/sandbox-runtime) - Lightweight sandboxing tool enforcing filesystem and network restrictions on arbitrary processes without requiring a container
 
@@ -77,8 +54,6 @@ Jails and namespace-based tools restrict syscalls, filesystem, and network acces
 
 Copy-on-write and virtual filesystem layers isolate agent changes from the host or workspace while keeping performance high.
 
-### Base Technologies
-
 - [AgentFS](https://docs.turso.tech/agentfs/guides/sandbox) - Copy-on-write sandboxing isolating file changes from original source tree
 - [LocalSandbox](https://github.com/coplane/localsandbox) - Python SDK with SQLite-backed virtual filesystem for bash and Python execution
 
@@ -86,14 +61,7 @@ Copy-on-write and virtual filesystem layers isolate agent changes from the host 
 
 ## WASM Runtimes
 
-WebAssembly provides strong sandboxing inside a language runtime and is useful when you need embedding or portable execution.
-
-### Base Technologies
-
-- [Wasmtime](https://wasmtime.dev) - Fast and secure WebAssembly runtime by Bytecode Alliance with WASI support
-- [Pyodide](https://pyodide.org) - CPython distribution compiled to WebAssembly for browser and Node.js execution
-
-### Agent Sandboxes
+WebAssembly provides strong sandboxing inside a language runtime and is useful when you need embedding or portable execution. Built on technologies like [Wasmtime](https://wasmtime.dev) and [Pyodide](https://pyodide.org).
 
 - [Wassette](https://github.com/microsoft/wassette) - MCP server runtime executing WebAssembly components with browser-grade tool isolation
 - [Capsule](https://github.com/mavdol/capsule) - Secure AI agent runtime executing tasks in isolated WASM sandboxes with resource limits
@@ -106,8 +74,6 @@ WebAssembly provides strong sandboxing inside a language runtime and is useful w
 ## Embedded Interpreters
 
 In-process execution with strict capability controls but no OS boundary; best for lightweight tasks or trusted environments.
-
-### Base Technologies
 
 - [Monty](https://github.com/pydantic/monty) - Minimal Python interpreter in Rust with microsecond startup and strict capability controls
 
