@@ -24,6 +24,7 @@ Full or lightweight VMs provide the strongest isolation boundary and are the mos
 - [exe.dev](https://exe.dev) - Persistent SSH-accessible VMs with sudo access for development workflows
 - [Daytona](https://daytona.io) - Secure infrastructure for running AI-generated code in cloud environments
 - [Modal](https://modal.com) - Serverless platform with ephemeral environments for running untrusted code at scale
+- [Tenki Sandbox](https://tenki.cloud/products/sandbox) - Disposable, hardware-isolated Linux VMs for AI agents with warm-start sessions, snapshot and fork, and multi-language SDKs
 
 ---
 
