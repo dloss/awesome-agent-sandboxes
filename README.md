@@ -16,6 +16,7 @@ Full or lightweight VMs provide the strongest isolation boundary and are the mos
 - [yolo-cage](https://github.com/borenstein/yolo-cage) - VM-based sandbox for AI coding agents that blocks secret exfiltration and prevents agents from merging their own PRs
 - [Matchlock](https://github.com/jingkaihe/matchlock) - CLI running AI agents in ephemeral microVMs (Firecracker on Linux, Virtualization.framework on macOS) with network allowlisting
 - [Arrakis](https://github.com/abshkbh/arrakis) - Self-hosted microVM platform for AI agent code execution with checkpoint-and-restore functionality
+- [BunkerVM](https://github.com/ashishgituser/bunkervm) - Self-hosted Firecracker microVMs that record every command, rewind to any earlier step, and diff two agent runs
 - [ERA](https://github.com/BinSquare/ERA) - Local sandboxing using krunvm microVMs with container-like UX and optional Cloudflare Workers deployment
 - [Gondolin](https://github.com/earendil-works/gondolin) - QEMU-based microVMs booting in under a second with programmatic network and filesystem control
 - [Netclode](https://github.com/angristan/netclode) - Self-hosted cloud coding agent using Kata Containers with Cloud Hypervisor microVMs
