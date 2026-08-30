@@ -37,6 +37,7 @@ OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; 
 - [yolobox](https://github.com/finbarr/yolobox) - CLI running AI agents in containers where home directory stays unmounted for safety
 - [CodeRunner](https://github.com/instavm/coderunner) - Secure local sandbox to run LLM-generated code on macOS using Apple containers and MCP
 - [SandboxAI](https://github.com/substratusai/sandboxai) - Docker-containerized runtime for safely executing AI-generated Python and shell commands
+- [SandBase Harness](https://github.com/sandbaseai/sandbase-harness) - Local-first TypeScript agent runtime with governed MCP tools, persistent sessions, approvals, audit/replay, and Local, Docker, Kubernetes, or worker execution backends; isolation depends on the selected backend and deployment
 - [llm-sandbox](https://github.com/vndee/llm-sandbox) - Python library executing LLM-generated code in Docker/Kubernetes/Podman with customizable security
 - [MCP Runner](https://github.com/abir-taheer/mcp-runner) - MCP server platform using Docker with gVisor runtime for multi-tenant isolation
 - [PythonSafeEval](https://github.com/s3131212/PythonSafeEval) - Python execution using nsjail process jail inside Docker containers
