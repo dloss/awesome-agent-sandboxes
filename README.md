@@ -39,6 +39,7 @@ OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; 
 - [SandboxAI](https://github.com/substratusai/sandboxai) - Docker-containerized runtime for safely executing AI-generated Python and shell commands
 - [llm-sandbox](https://github.com/vndee/llm-sandbox) - Python library executing LLM-generated code in Docker/Kubernetes/Podman with customizable security
 - [MCP Runner](https://github.com/abir-taheer/mcp-runner) - MCP server platform using Docker with gVisor runtime for multi-tenant isolation
+- [SandBase Harness](https://github.com/sandbaseai/sandbase-harness) - Local-first self-hosted agent runtime with persistent sessions, MCP and permission boundaries, audit/replay, and optional Docker/Kubernetes/self-hosted-worker execution backends; the isolation boundary depends on the selected backend and deployment configuration
 - [PythonSafeEval](https://github.com/s3131212/PythonSafeEval) - Python execution using nsjail process jail inside Docker containers
 
 ---
