@@ -10,6 +10,7 @@ Where applicable, each section links to the base technologies (isolation engines
 
 Full or lightweight VMs provide the strongest isolation boundary and are the most common choice for running untrusted agent code at scale. Built on technologies like [Firecracker](https://github.com/firecracker-microvm/firecracker), [libkrun](https://github.com/containers/libkrun), and [Cloud Hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor).
 
+- [CreateOS](https://createos.sh) - MicroVM sandbox platform with pause-to-snapshot, fork-based branching, and private overlay networking for multi-agent systems ([SDK](https://github.com/NodeOps-app/createos-sandbox-sdk))
 - [E2B](https://e2b.dev) - Cloud sandbox platform powered by Firecracker microVMs for enterprise AI agents to safely execute code
 - [Sprites](https://sprites.dev) / [Fly.io Sprites](https://fly.io) - Ephemeral Linux VMs secured through Firecracker with checkpoint/restore capabilities
 - [Vercel Sandbox](https://github.com/vercel/sandbox) - Ephemeral compute service executing untrusted code in isolated Firecracker microVMs
