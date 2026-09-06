@@ -77,6 +77,7 @@ WebAssembly provides strong sandboxing inside a language runtime and is useful w
 In-process execution with strict capability controls but no OS boundary; best for lightweight tasks or trusted environments.
 
 - [Monty](https://github.com/pydantic/monty) - Minimal Python interpreter in Rust with microsecond startup and strict capability controls
+- [bashkit4j](https://github.com/tersePrompts/bashkit4j) - Embedded bash interpreter (Rust core, Java 17+ JNA binding): 160+ reimplemented commands on a virtual filesystem, virtual identity, network denied by default
 
 ---
 
