@@ -48,6 +48,7 @@ OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; 
 Jails and namespace-based tools restrict syscalls, filesystem, and network access for individual processes with minimal overhead. Built on technologies like [Bubblewrap](https://github.com/containers/bubblewrap), [runjail](https://github.com/debfx/runjail), and [sydbox](https://gitlab.exherbo.org/sydbox/sydbox).
 
 - [Anthropic Sandbox Runtime](https://github.com/anthropic-experimental/sandbox-runtime) - Lightweight sandboxing tool enforcing filesystem and network restrictions on arbitrary processes without requiring a container
+- [AgentVault](https://github.com/aashish254/agentvault) - Runtime permission firewall wrapping any agent CLI in a kernel sandbox (macOS Seatbelt) generated from declarative YAML policy, with approval workflows and a tamper-evident signed audit log
 
 ---
 
