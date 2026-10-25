@@ -28,6 +28,8 @@ Full or lightweight VMs provide the strongest isolation boundary and are the mos
 
 ---
 
+- [Kortix](https://opensourceaiagentplatform.com/ai-agent-sandboxing) - Open-source AI Operating System that runs every agent session in its own isolated sandbox (Platinum, a Cloud Hypervisor microVM) and decides tool access per connector action with Allow, Ask or Block rules kept in the project repo
+
 ## Containers
 
 OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; it is fast and flexible but shares the host kernel. Built on technologies like [gVisor](https://github.com/google/gvisor) and [LiteBox](https://github.com/microsoft/litebox).
