@@ -40,6 +40,7 @@ OS-level isolation uses Linux namespaces, cgroups, or kernel-enforced policies; 
 - [llm-sandbox](https://github.com/vndee/llm-sandbox) - Python library executing LLM-generated code in Docker/Kubernetes/Podman with customizable security
 - [MCP Runner](https://github.com/abir-taheer/mcp-runner) - MCP server platform using Docker with gVisor runtime for multi-tenant isolation
 - [PythonSafeEval](https://github.com/s3131212/PythonSafeEval) - Python execution using nsjail process jail inside Docker containers
+- [Sandbox0](https://sandbox0.ai) - Managed cloud computers for AI agents with persistent writable RootFS checkpoints, gVisor isolation, and on-demand compute
 
 ---
 
