@@ -25,6 +25,7 @@ Full or lightweight VMs provide the strongest isolation boundary and are the mos
 - [Daytona](https://daytona.io) - Secure infrastructure for running AI-generated code in cloud environments
 - [Modal](https://modal.com) - Serverless platform with ephemeral environments for running untrusted code at scale
 - [Tenki Sandbox](https://tenki.cloud/products/sandbox) - Disposable, hardware-isolated Linux VMs for AI agents with warm-start sessions, snapshot and fork, and multi-language SDKs
+- [CubePod](https://github.com/cubeplexai/cubepod) - Open-source Kata Containers microVM platform for AI agents with persistent writable RootFS and workspace block volumes, <1s Copy-on-Write forks, zero-trust egress secret vault, and E2B SDK compatibility
 
 ---
 
