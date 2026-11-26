@@ -25,6 +25,7 @@ Full or lightweight VMs provide the strongest isolation boundary and are the mos
 - [Daytona](https://daytona.io) - Secure infrastructure for running AI-generated code in cloud environments
 - [Modal](https://modal.com) - Serverless platform with ephemeral environments for running untrusted code at scale
 - [Tenki Sandbox](https://tenki.cloud/products/sandbox) - Disposable, hardware-isolated Linux VMs for AI agents with warm-start sessions, snapshot and fork, and multi-language SDKs
+- [CreateOS Sandbox](https://github.com/NodeOps-app/createos-sandbox) - Open-source Firecracker microVM sandboxes for AI agents, hosted or self-hosted, with pause, resume, fork and egress allowlists
 
 ---
 
